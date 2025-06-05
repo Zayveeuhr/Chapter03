@@ -1,5 +1,7 @@
 ﻿#region if Statement
 
+using SelectionStatments;
+
 string password = "interstellar";
 
 WriteLine(password.Length < 8 ? "Your password is too short. Use at least 8 chars." : "your password is strong.");
@@ -61,5 +63,29 @@ switch (number)
 WriteLine("After end of switch");
 A_label:
 WriteLine($"After A_label");
+
+#endregion
+
+#region Pattern matching with statements
+
+var animals = new Animals?[]
+{
+    new Cat { Name = "Karen", Born = new(2022, 8, 23), Legs = 4, IsDomestic = true }, null,
+    new Cat { Name = "Mufasa", Born = new(1994, 6, 12) },
+    new Spider { Name = "Sid  Vicious", Born = DateTime.Today, IsVenomous = true },
+    new Spider { Name = "Captin Furry", Born = DateTime.Today }
+
+};
+
+
+foreach (Animals? animal in animals )
+{
+    string message;
+
+    switch (animal)
+    {
+        
+    }
+}
 
 #endregion
