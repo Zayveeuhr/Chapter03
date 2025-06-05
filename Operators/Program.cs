@@ -90,3 +90,20 @@ WriteLine($"x * 8        | {x * 8,7} | {x * 8:B8}");
 WriteLine($"y >> 1       | {y >> 1,7} | {y >> 1:B8}");
 
 #endregion
+
+#region Miscellaneous operators
+
+int age = 50;
+
+WriteLine($"\n\nThe {nameof(age)} variable uses {sizeof(int)} bytes of memory");
+
+// How many operators in the following statement?
+char firstDigit = age.ToString()[0];
+
+// There are four operators 
+// = is the assignment operator
+// . is the member class operator
+// () is the invocation operator
+// [] is the index access operator
+
+#endregion
