@@ -21,4 +21,9 @@ namespace SelectionStatments
     {
         public bool IsVenomous;
     }
+
+    class Dog: Animals
+    {
+        public bool IsFat;
+    }
 }

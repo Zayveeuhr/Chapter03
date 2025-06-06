@@ -1,5 +1,7 @@
 ﻿#region if Statement
 
+using System.Linq.Expressions;
+using System.Text.Json.Serialization;
 using SelectionStatments;
 
 string password = "interstellar";
@@ -73,7 +75,8 @@ var animals = new Animals?[]
     new Cat { Name = "Karen", Born = new(2022, 8, 23), Legs = 4, IsDomestic = true }, null,
     new Cat { Name = "Mufasa", Born = new(1994, 6, 12) },
     new Spider { Name = "Sid  Vicious", Born = DateTime.Today, IsVenomous = true },
-    new Spider { Name = "Captin Furry", Born = DateTime.Today }
+    new Spider { Name = "Captin Furry", Born = DateTime.Today },
+    new Dog { Name = "jeff", Born = new(2011,5,6), Legs = 4, IsFat = false }
 
 };
 
@@ -82,10 +85,46 @@ foreach (Animals? animal in animals )
 {
     string message;
 
-    switch (animal)
+    //switch (animal)
+    //{
+    //    case Cat fourLeggedCat when fourLeggedCat.Legs == 4: // also: case Cat { Legs: 4 } fourLeggedCat
+    //        message = $"The cat name {fourLeggedCat.Name} has four legs.";
+    //        break;
+    //    case Cat wildCat when wildCat.IsDomestic == false:
+    //        message = $"The non-domestic cat is named {wildCat.Name}.";
+    //        break;
+    //    case Cat cat:
+    //        message = $"The Cat is named {cat.Name}.";
+    //        break;
+    //    default:// default is always evaluated last.
+    //        message = $"{animal.Name} is a {animal.GetType().Name}";
+    //        break;
+    //    case Spider spider when spider.IsVenomous:
+    //        message = $"The {spider.Name} spider is venomous. Run!";
+    //        break;
+    //    case Dog dog when dog.IsFat == true || dog.IsFat == false:
+    //        //WriteLine(dog.IsFat == true ? message = $"The dog {dog.Name} was born on {dog.Born} and is Fat" : message = $"The dog {dog.Name} was born on {dog.Born} and is not fat");
+    //        message = (dog.IsFat == true ? message = $"The dog {dog.Name} was born on {dog.Born} and is Fat" : message = $"The dog {dog.Name} was born on {dog.Born} and is not fat");
+    //        break;
+    //    case null:
+    //        message = "The animal is null.";
+    //        break;
+    //}
+    //WriteLine($"switch statement: {message}");
+
+    message = animal switch
     {
-        
-    }
+        // same switch statement as above shorter code using lambda expression.
+
+        Cat fourLeggedCat when fourLeggedCat.Legs == 4 => $"The cat name {fourLeggedCat.Name} has four legs.",
+        Cat wildCat when wildCat.IsDomestic == false => $"The non-domestic cat is named {wildCat.Name}.",
+        Cat cat => $"The Cat is named {cat.Name}.",
+        Spider spider when spider.IsVenomous => $"The {spider.Name} spider is venomous. Run!",
+        Dog dog when dog.IsFat == true || dog.IsFat == false => dog.IsFat == true ? message = $"The dog {dog.Name} was born on {dog.Born} and is Fat" : message = $"The dog {dog.Name} was born on {dog.Born} and is not fat",
+        null => "The animal is null.",
+        _ => $"{animal.Name} is a {animal.GetType().Name}." // _ is shortcut default here.
+    };
+    WriteLine($"switch expression: {message}");
 }
 
 #endregion
