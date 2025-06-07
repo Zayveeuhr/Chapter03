@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectionStatments", "Selec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationStatments", "IterationStatments\IterationStatments.csproj", "{CCD1F390-C425-4729-B553-9E019F090893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{F1118BED-95C2-45E2-8C6D-EE535B78D45F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingConverting", "CastingConverting\CastingConverting.csproj", "{AFED68BA-FAD1-4E7E-8E27-72E3FA2B0E6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{CCD1F390-C425-4729-B553-9E019F090893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD1F390-C425-4729-B553-9E019F090893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD1F390-C425-4729-B553-9E019F090893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1118BED-95C2-45E2-8C6D-EE535B78D45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1118BED-95C2-45E2-8C6D-EE535B78D45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1118BED-95C2-45E2-8C6D-EE535B78D45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1118BED-95C2-45E2-8C6D-EE535B78D45F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFED68BA-FAD1-4E7E-8E27-72E3FA2B0E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFED68BA-FAD1-4E7E-8E27-72E3FA2B0E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFED68BA-FAD1-4E7E-8E27-72E3FA2B0E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFED68BA-FAD1-4E7E-8E27-72E3FA2B0E6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

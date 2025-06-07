@@ -1,5 +1,7 @@
 ﻿#region Looping with the while statement
 
+using System.Reflection.Metadata;
+
 int x = 0;
 
 while (x < 10)
@@ -45,6 +47,17 @@ for (int y =1; y <= 10; y ++)
 for (int y = 0; y <= 10; y += 3)
 {
     WriteLine(y);
+}
+
+#endregion
+
+#region Looping with foreach
+
+string[] names = { "Adam", "Barry", "Charlie" };
+WriteLine("\n\n");
+foreach (var name in names)
+{
+    WriteLine($"{name} has {name.Length} charaters.");
 }
 
 #endregion
