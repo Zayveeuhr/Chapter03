@@ -1,3 +1,5 @@
+﻿using static System.Convert; // To use the ToInt32 method.
+
 ﻿#region Casting int to double
 
 int a = 10;
