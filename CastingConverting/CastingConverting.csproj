@@ -9,5 +9,6 @@
 
 	<ItemGroup>
         <Using Include="System.Console" static="true"/>
+        <Using Include="System.Convert" static="true"/>
 	</ItemGroup>
 </Project>
