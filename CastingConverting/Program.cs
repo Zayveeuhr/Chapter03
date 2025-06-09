@@ -1,7 +1,9 @@
 ﻿//using static System.Convert; // To use the ToInt32 method. but I decided to add this globally in the .csproj 
+using System.Globalization;// To use CultureInfo
 
 #region Casting int to double
 
+using System.Buffers.Text;
 using System.Reflection;
 
 int a = 10;
@@ -135,5 +137,29 @@ WriteLine();
 // Convert the array to base64 string and output as text.
 string encoded = ToBase64String(binaryObject);
 WriteLine($"Binary object as base64: {encoded}");
+
+#endregion
+
+#region Parsing from strings to numbers or dates and times
+
+// Set the current culture to make sure data parsing works.
+CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-us");
+WriteLine();
+int friends = int.Parse("27");
+DateTime birthday = DateTime.Parse("4 june 1980");
+WriteLine($"I have {friends} friends to invite to my party.");
+WriteLine($"My birthday is {birthday}.");
+WriteLine($"My birthday is {birthday:D}");
+
+#endregion
+
+#region Avoiding exceptiions by using the tryParse method
+
+WriteLine();
+
+Write("How many eggs are there? ");
+string? input = ReadLine();
+
+WriteLine(int.TryParse(input, out int count) ? $"There are {count} eggs." : "I could not parse the input");
 
 #endregion
