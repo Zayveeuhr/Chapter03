@@ -99,3 +99,41 @@ foreach (double n in doubles)
 }
 
 #endregion
+
+#region Converting from any type to a string
+WriteLine();
+int number = 12;
+WriteLine(number.ToString());
+
+bool boolean = true;
+WriteLine(boolean.ToString());
+
+DateTime now = DateTime.Now;
+WriteLine(now.ToString());
+
+object me = new();
+WriteLine(me.ToString());
+
+#endregion
+
+#region Converting from a bianry object to a string
+
+WriteLine();
+// Allocate an array of 128 bytes.
+byte[] binaryObject = new byte[128];
+
+// Populate the array with random bytes
+Random.Shared.NextBytes(binaryObject);
+
+WriteLine("Binary object as bytes");
+for (int index = 0; index < binaryObject.Length; index++)
+{
+    Write($"{binaryObject[index]:x2} ");
+}
+WriteLine();
+
+// Convert the array to base64 string and output as text.
+string encoded = ToBase64String(binaryObject);
+WriteLine($"Binary object as base64: {encoded}");
+
+#endregion
