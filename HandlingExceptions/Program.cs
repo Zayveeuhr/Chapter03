@@ -67,6 +67,8 @@
 //    WriteLine($"After incrementing: {x}");
 //}
 
+using System.Runtime.CompilerServices;
+
 try
 {
     checked
@@ -95,5 +97,43 @@ catch (OverflowException)
 //WriteLine($"After incrementing: {x}");
 //x++;
 //WriteLine($"After incrementing: {x}");
+#endregion
+
+#region Disabling compiler ovberflow checks with the unchecked statements
+
+
+
+unchecked
+{
+    WriteLine();
+    int y = int.MaxValue + 1;
+    WriteLine($"Initial value: {y}");
+    y--;
+    WriteLine($"After decrementing: {y}");
+    y--;
+    WriteLine($"After decrementing: {y}");
+}
+
+#endregion
+
+#region Result type in .NET
+
+public class Result<T>
+{
+    public T Value { get; }
+    public bool IsSuccess { get; }
+    public string ErrorMessage { get; }
+
+    private Result(T value, bool isSuccess, string errorMessage)
+    {
+        Value = value;
+        IsSuccess = isSuccess;
+        ErrorMessage = errorMessage;
+    }
+
+    public static Result<T> Success(T value) => new Result<T>(value, true, null);
+    public static Result<T> Failure(string errorMessage) => new Result<T>(default, false, errorMessage);
+}
+
 #endregion
 
