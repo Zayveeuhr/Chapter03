@@ -2,18 +2,18 @@
 
 #region Prasactice exception handling
 
-Write("Enter a number between 0 and 255: ");
-string firstNumber = ReadLine();
-Write("Enter another number between 0 and 255: ");
-string secondNumber = ReadLine();
-try
-{
-    WriteLine($"{firstNumber} divided by {secondNumber} is {byte.Parse(firstNumber) / byte.Parse(secondNumber)}");
-}
-catch (FormatException e)
-{
-    WriteLine($"{e.GetType().Name}: {e.Message}");
-}
+//Write("Enter a number between 0 and 255: ");
+//string firstNumber = ReadLine();
+//Write("Enter another number between 0 and 255: ");
+//string secondNumber = ReadLine();
+//try
+//{
+//    WriteLine($"{firstNumber} divided by {secondNumber} is {byte.Parse(firstNumber) / byte.Parse(secondNumber)}");
+//}
+//catch (FormatException e)
+//{
+//    WriteLine($"{e.GetType().Name}: {e.Message}");
+//}
 
 ////Exampple 
 //Write("Enter a number between 0 and 255: ");
@@ -37,3 +37,10 @@ catch (FormatException e)
 //}
 
 #endregion
+
+checked
+{
+    int max = int.MaxValue;
+
+    WriteLine($"{max + 1}");
+}
